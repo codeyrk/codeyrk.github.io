@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh Kulkarni | Head of Engineering</title>
+    <meta name="description" content="Engineering leader with 19+ years building high-velocity teams and data platforms at scale. Berlin-based, specializing in platform modernization and organizational transformation.">
+    
+    <!-- Fonts: Playfair Display for headlines (editorial), IBM Plex Sans for body (technical precision) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0A1929;
+            --slate: #1E293B;
+            --gray: #64748B;
+            --light: #F8FAFC;
+            --accent: #0EA5E9;
+            --gold: #F59E0B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: var(--light);
+            color: var(--slate);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .eyebrow {
+            font-size: 0.875rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .subtitle {
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        
+        .btn-primary:hover {
+            background: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+        
+        /* Section Styling */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+        
+        .section-intro {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 2rem 0 4rem 0;
+            font-weight: 300;
+        }
+        
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .experience-card {
+            border-left: 4px solid var(--accent);
+            padding-left: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            border-left-color: var(--gold);
+            transform: translateX(10px);
+        }
+        
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .role {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .company {
+            font-size: 1.125rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .period {
+            font-size: 0.875rem;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        
+        .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .achievements li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+            color: var(--slate);
+        }
+        
+        .achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            padding: 0.5rem 1rem;
+            background: var(--light);
+            color: var(--slate);
+            font-size: 0.875rem;
+            border-radius: 2px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .tag:hover {
+            background: var(--accent);
+            color: white;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--slate);
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            color: var(--accent);
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--slate);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .company-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .experience-card {
+                padding-left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">Engineering Leadership · Berlin</div>
+            <h1>Yogesh Kulkarni</h1>
+            <p class="subtitle">
+                Transforming overwhelmed engineering teams into confident, high-performing organizations. 
+                19+ years building data platforms and scaling teams that ship with conviction.
+            </p>
+            <div class="cta-buttons">
+                <a href="#experience" class="btn btn-primary">View Experience</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <h2 class="section-title" style="color: white;">Impact by Numbers</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">19+</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Team Members Scaled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">40+</div>
+                <div class="stat-label">Data Sources Integrated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1B+</div>
+                <div class="stat-label">Daily Transactions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title reveal">Experience</h2>
+        <p class="section-intro reveal">
+            Building high-velocity teams and integration-heavy platforms across adtech, intelligence, and enterprise domains.
+        </p>
+        
+        <div class="experience-grid">
+            <div class="experience-card reveal">
+                <div class="company-header">
+                    <div>
+                        <div class="role">Director of Engineering</div>
+                        <div class="company">Virtual Minds</div>
+                    </div>
+                    <div class="period">2023 – PRESENT · BERLIN</div>
+                </div>
+                <ul class="achievements">
+                    <li>Led 30+ engineers delivering data platform serving billions of daily ad requests at 12K+ req/sec</li>
+                    <li>Restructured teams around value streams, reducing deployment cycles from 2+ weeks to under 5 days</li>
+                    <li>Reduced infrastructure costs 35% through cloud-native modernization</li>
+                    <li>Enabled platform self-service, accelerating product team velocity</li>
+                </ul>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="company-header">
+                    <div>
+                        <div class="role">Engineering Manager</div>
+                        <div class="company">Delivery Hero SE</div>
+                    </div>
+                    <div class="period">2022 – 2023 · BERLIN</div>
+                </div>
+                <ul class="achievements">
+                    <li>Built AI-powered customer platform handling 50K+ daily interactions across 50+ markets</li>
+                    <li>Reduced customer contact rate 25% through ChatGPT automation</li>
+                    <li>Established data-driven engineering culture improving customer satisfaction</li>
+                </ul>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="company-header">
+                    <div>
+                        <div class="role">Principal Architect | Engineering Manager</div>
+                        <div class="company">Technology Innovation Institute</div>
+                    </div>
+                    <div class="period">2020 – 2022 · ABU DHABI</div>
+                </div>
+                <ul class="achievements">
+                    <li>Led 25-member organization as Acting CRO across cybersecurity research projects</li>
+                    <li>Negotiated enterprise Kubernetes platform evaluation (Rancher, OpenShift, Tanzu)</li>
+                    <li>Delivered automated fuzzing platform with 50+ C/C++ targets from scratch</li>
+                    <li>Managed multiple Engineering Managers, building high-velocity culture</li>
+                </ul>
+            </div>
+
+            <div class="experience-card reveal">
+                <div class="company-header">
+                    <div>
+                        <div class="role">Product Architect | Engineering Manager</div>
+                        <div class="company">Pegasus FZ LLC</div>
+                    </div>
+                    <div class="period">2016 – 2020 · ABU DHABI</div>
+                </div>
+                <ul class="achievements">
+                    <li>Architected unified data platform integrating 40+ external data sources with bidirectional read/write</li>
+                    <li>Established data contracts, SLO-backed monitoring, and quality frameworks for government clients</li>
+                    <li>Scaled team from 2 to 15+ through value stream organization</li>
+                    <li>Led business development for 3 national intelligence platforms across 3 countries</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: white;">
+        <h2 class="section-title reveal">Expertise</h2>
+        <p class="section-intro reveal">
+            Deep technical credibility meets commercial acumen—building systems that scale, teams that thrive, outcomes that matter.
+        </p>
+        
+        <div class="skills-grid">
+            <div class="skill-category reveal">
+                <h3>Leadership</h3>
+                <div class="skill-tags">
+                    <span class="tag">Team Scaling</span>
+                    <span class="tag">Value Streams</span>
+                    <span class="tag">Managing Managers</span>
+                    <span class="tag">Org Design</span>
+                    <span class="tag">Culture Building</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <h3>Platform & Data</h3>
+                <div class="skill-tags">
+                    <span class="tag">Data Lake</span>
+                    <span class="tag">ETL</span>
+                    <span class="tag">Kafka</span>
+                    <span class="tag">Elasticsearch</span>
+                    <span class="tag">Data Harmonization</span>
+                    <span class="tag">SLO Operations</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <h3>Cloud & Infrastructure</h3>
+                <div class="skill-tags">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Microservices</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">Hybrid Cloud</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <h3>Engineering</h3>
+                <div class="skill-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Golang</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">C/C++</span>
+                    <span class="tag">Observability</span>
+                    <span class="tag">Agile</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <p class="section-intro reveal">
+            Open to Head of Engineering and VP Engineering opportunities in Berlin where the challenge is real and the team is ready to build something exceptional.
+        </p>
+        
+        <div class="contact-links reveal">
+            <a href="mailto:yrkulkarni@live.com" class="contact-link">
+                <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                </svg>
+                Email
+            </a>
+            
+            <a href="https://linkedin.com/in/yrkulkarni" target="_blank" class="contact-link">
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                LinkedIn
+            </a>
+            
+            <a href="tel:+4917636524044" class="contact-link">
+                <svg class="icon" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                +49 176 3652 4044
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Yogesh Kulkarni. Built for impact, designed for humans.</p>
+    </footer>
+
+    <!-- Scroll Reveal Script -->
+    <script>
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Check on load
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
